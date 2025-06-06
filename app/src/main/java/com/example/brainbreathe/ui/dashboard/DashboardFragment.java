@@ -90,24 +90,40 @@ public class DashboardFragment extends Fragment {
 
     private void mostrarBoton(Button boton, String texto){
 
+        String link = "";
+        switch (texto){
+            case "1":
+                link = "https://www.youtube.com/watch?v=ZbZSe6N_BXs";
+                boton.setText("I can see that you are having a great day, here you have a video to keep it like that");
+                break;
+            case "2":
+                link = "https://www.youtube.com/watch?v=thcEuMDWxoI";
+                boton.setText("I can see that today is not your best day, we recommend you to do this meditation");
+                break;
+            default:
+                link = "https://www.youtube.com/watch?v=mk48xRzuNvA";
+                boton.setText("I can see that today is not your best day neither your worst, here you have a motivational video");
+                break;
+        }
+
         boton.setOnClickListener(v -> {
             // URL del video de
-            String link = "";
+            String link1 = "";
             switch (texto){
                 case "1":
-                    link = "https://www.youtube.com/watch?v=ZbZSe6N_BXs";
+                    link1 = "https://www.youtube.com/watch?v=ZbZSe6N_BXs";
                     boton.setText("I can see that you are having a great day, here you have a video to keep it like that");
                     break;
                 case "2":
-                    link = "https://www.youtube.com/watch?v=thcEuMDWxoI";
+                    link1 = "https://www.youtube.com/watch?v=thcEuMDWxoI";
                     boton.setText("I can see that today is not your best day, we recommend you to do this meditation");
                     break;
                 default:
-                    link = "https://www.youtube.com/watch?v=mk48xRzuNvA";
+                    link1 = "https://www.youtube.com/watch?v=mk48xRzuNvA";
                     boton.setText("I can see that today is not your best day neither your worst, here you have a motivational video");
                     break;
             }
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link1));
             intent.setPackage("com.google.android.youtube"); // Forzar YouTube App si está instalada
 
             // Fallback: si YouTube no está instalada, abrir con navegador
@@ -115,7 +131,7 @@ public class DashboardFragment extends Fragment {
                 startActivity(intent);
             } else {
                 // Abrir con cualquier navegador
-                Intent fallback = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+                Intent fallback = new Intent(Intent.ACTION_VIEW, Uri.parse(link1));
                 startActivity(fallback);
             }
         });
