@@ -24,6 +24,7 @@
         android:textSize="40sp"
         android:backgroundTint="#AED7FF"
         android:elevation="6dp"
-        android:layout_margin="16dp" />
+        android:layout_margin="16dp"
+        />
 
 </RelativeLayout>

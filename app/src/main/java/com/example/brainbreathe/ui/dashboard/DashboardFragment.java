@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -56,20 +57,22 @@ public class DashboardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        Button btnAction = view.findViewById(R.id.btnAction);
         // Botón: Feliz
         ImageButton emojiHappy = view.findViewById(R.id.emojiHappy);
         emojiHappy.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Te sientes feliz 😊", Toast.LENGTH_SHORT).show());
+                mostrarBoton(btnAction, "Iniciar Meditación"));
 
         // Botón: Triste
         ImageButton emojiSad = view.findViewById(R.id.emojiSad);
         emojiSad.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Te sientes triste 😢", Toast.LENGTH_SHORT).show());
+                mostrarBoton(btnAction, "Iniciar Meditación"));
 
         // Botón: Enfadado
         ImageButton emojiAngry = view.findViewById(R.id.emojiGood);
         emojiAngry.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Te sientes enfadado 😠", Toast.LENGTH_SHORT).show());
+                mostrarBoton(btnAction, "Iniciar Meditación"));
+
 
         return view;
 
@@ -80,5 +83,10 @@ public class DashboardFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void mostrarBoton(Button boton, String texto){
+        boton.setText(texto);
+        boton.setVisibility(View.VISIBLE);
     }
 }

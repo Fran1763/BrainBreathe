@@ -81,6 +81,17 @@
 
         </GridLayout>
 
+        <Button
+            android:id="@+id/btnAction"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:text="Accion segun estado"
+            android:visibility="gone"
+            android:backgroundTint="#AED7FF"
+            android:elevation="6dp"
+            android:layout_marginTop="24dp"
+            />
 
     </LinearLayout>
 </ScrollView>
