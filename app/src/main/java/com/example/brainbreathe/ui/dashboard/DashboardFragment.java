@@ -1,5 +1,7 @@
 package com.example.brainbreathe.ui.dashboard;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,20 +60,21 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         Button btnAction = view.findViewById(R.id.btnAction);
+
         // Botón: Feliz
         ImageButton emojiHappy = view.findViewById(R.id.emojiHappy);
         emojiHappy.setOnClickListener(v ->
-                mostrarBoton(btnAction, "Iniciar Meditación"));
+                mostrarBoton(btnAction, "1"));
 
         // Botón: Triste
         ImageButton emojiSad = view.findViewById(R.id.emojiSad);
         emojiSad.setOnClickListener(v ->
-                mostrarBoton(btnAction, "Iniciar Meditación"));
+                mostrarBoton(btnAction, "2"));
 
         // Botón: Enfadado
         ImageButton emojiAngry = view.findViewById(R.id.emojiGood);
         emojiAngry.setOnClickListener(v ->
-                mostrarBoton(btnAction, "Iniciar Meditación"));
+                mostrarBoton(btnAction, "3"));
 
 
         return view;
@@ -86,7 +89,33 @@ public class DashboardFragment extends Fragment {
     }
 
     private void mostrarBoton(Button boton, String texto){
-        boton.setText(texto);
+
+        binding.btnAction.setOnClickListener(v -> {
+            // URL del video de
+            String link = "";
+            switch (texto){
+                case "1":
+                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    break;
+                case "2":
+                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    break;
+                default:
+                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    break;
+            }
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+            intent.setPackage("com.google.android.youtube"); // Forzar YouTube App si está instalada
+
+            // Fallback: si YouTube no está instalada, abrir con navegador
+            if (intent.resolveActivity(requireActivity().getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                // Abrir con cualquier navegador
+                Intent fallback = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+                startActivity(fallback);
+            }
+        });
         boton.setVisibility(View.VISIBLE);
     }
 }
