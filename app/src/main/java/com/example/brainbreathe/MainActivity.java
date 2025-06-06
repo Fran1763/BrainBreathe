@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private int pimpinela;
+    private int jojojo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
