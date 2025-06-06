@@ -13,7 +13,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.brainbreathe.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+    private int prueba;
     private ActivityMainBinding binding;
 
     @Override
