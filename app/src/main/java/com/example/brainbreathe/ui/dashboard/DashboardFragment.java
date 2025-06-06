@@ -95,13 +95,16 @@ public class DashboardFragment extends Fragment {
             String link = "";
             switch (texto){
                 case "1":
-                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    link = "https://www.youtube.com/watch?v=ZbZSe6N_BXs";
+                    boton.setText("I can see that you are having a great day, here you have a video to keep it like that");
                     break;
                 case "2":
-                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    link = "https://www.youtube.com/watch?v=thcEuMDWxoI";
+                    boton.setText("I can see that today is not your best day, we recommend you to do this meditation");
                     break;
                 default:
-                    link = "https://www.youtube.com/watch?v=L0pt06D_O9k";
+                    link = "https://www.youtube.com/watch?v=mk48xRzuNvA";
+                    boton.setText("I can see that today is not your best day neither your worst, here you have a motivational video");
                     break;
             }
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
@@ -116,6 +119,8 @@ public class DashboardFragment extends Fragment {
                 startActivity(fallback);
             }
         });
+
+
         boton.setVisibility(View.VISIBLE);
     }
 }
