@@ -90,7 +90,7 @@ public class DashboardFragment extends Fragment {
 
     private void mostrarBoton(Button boton, String texto){
 
-        binding.btnAction.setOnClickListener(v -> {
+        boton.setOnClickListener(v -> {
             // URL del video de
             String link = "";
             switch (texto){
