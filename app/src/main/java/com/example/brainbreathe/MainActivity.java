@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private int jojojo;
 
     private int jijijiji;
-
+    private int jejeje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
