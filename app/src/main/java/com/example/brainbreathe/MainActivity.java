@@ -15,6 +15,7 @@ import com.example.brainbreathe.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private int pimpinela;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
