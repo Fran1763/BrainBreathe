@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private int pimpinela;
     private int jojojo;
 
+    private int jijijiji;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
